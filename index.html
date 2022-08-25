@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pogoda</title>
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./fontello/css/fontello.css">
+  </head>
+  <body>
+    <div class="spin">
+      <i class="icon-spin4"></i>
+    </div>
+    <main class="hide">
+      <h1>Apka pogodowa</h1>
+      <div class="container">
+        <div class="weather__mainInfo weather__dataContainer">
+          <p>
+            <span class="weather__date"></span>
+            <span class="weather__time"></span>
+          </p>
+          <p>
+            <span class="weather__city"></span>,
+            <span class="weather__country"></span>
+          </p>
+          <p class="weather__tempContainer">
+            <span class="weather__temp"></span>
+            <span class="weather__tempIcon">°C</span>
+          </p>
+        </div>
+
+        <div class="weather__search weather__dataContainer">
+          <fieldset class="weather__fieldset">
+            <legend>Sprawdź pogodę:</legend>
+            <label for="city">Wpisz miejscowość</label>
+            <input
+              type="text"
+              name="city"
+              id="city"
+              placeholder="Wpisz miejscowość"
+            />
+          </fieldset>
+          <p class="weather__error weather__error--hide">
+            Nie znaleziono takiej miejscowości
+          </p>
+        </div>
+
+        <div class="weather__additionalInfo weather__dataContainer">
+          <div class="weather__descriptionContainer">
+            <img class="weather__icon" src="" alt="" />
+            <p class="weather__description"></p>
+          </div>
+          <p class="weather__tempLikes">
+            Odczuwalna temperatura
+            <span class="weather__tempLikesValue"></span>
+            °C
+          </p>
+        </div>
+
+        <div class="weather__sunInfo weather__dataContainer">
+          <p>
+            Wschód słońca:
+            <span class="weather__sunrise">-</span>
+          </p>
+
+          <p>
+            Zachód słońca:
+            <span class="weather__sunset">-</span>
+          </p>
+        </div>
+
+        <div class="weather__dataContainer">
+          <p class="weather__data weather__wind">
+            Wiatr
+            <span>
+              <span class="weather__windValue weather__dataValue">-</span>
+              <span class="weather__dataValue">km/h</span>
+            </span>
+          </p>
+        </div>
+
+        <div class="weather__dataContainer">
+          <p class="weather__data weather__humidity">
+            Wilgotność
+            <span>
+              <span class="weather__humidityValue weather__dataValue"></span>
+              <span class="weather__dataValue">%</span>
+            </span>
+          </p>
+        </div>
+
+        <div class="weather__dataContainer">
+          <p class="weather__data weather__visibility">
+            Widoczność
+            <span>
+              <span class="weather__visibilityValue weather__dataValue">-</span>
+              <span class="weather__dataValue">km</span>
+            </span>
+          </p>
+        </div>
+
+        <div class="weather__dataContainer">
+          <p class="weather__data weather__pressure">
+            Ciśnienie
+            <span>
+              <span class="weather__pressureValue weather__dataValue">-</span>
+              <span class="weather__dataValue">mbar</span>
+            </span>
+          </p>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
