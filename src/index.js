@@ -1,6 +1,4 @@
-import dotenv from "dotenv";
-dotenv.config();
-console.log(process.env);
+import { WEATHER_API_KEY, GEOLOCATION_API_KEY } from "./apiKeys.js";
 const cityInput = document.querySelector("#city");
 const weatherError = document.querySelector(".weather__error");
 
@@ -25,7 +23,7 @@ if (geo) {
 }
 
 async function getWeather(city) {
-  const apiKey = "4a637b306881b7669e12424ffe25dbbf";
+  const apiKey = WEATHER_API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pl`;
   try {
     const response = await fetch(url);
@@ -105,7 +103,7 @@ async function getCityImage(city) {
 }
 
 async function getCity(lat, lng) {
-  const apiKey = "6820d96c9d6f47309bd98ef20c4f40c9";
+  const apiKey = GEOLOCATION_API_KEY;
   const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&lang=pl&apiKey=${apiKey}`;
   try {
     const response = await fetch(url);
