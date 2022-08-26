@@ -1,4 +1,6 @@
-import { WEATHER_API_KEY, GEOLOCATION_API_KEY } from "./apiKeys.js";
+require("dotenv").config();
+import cloudsImg from "../src/images/clouds.jpg";
+import sunriseImg from "../src/images/sunrise.jpg";
 const cityInput = document.querySelector("#city");
 const weatherError = document.querySelector(".weather__error");
 
@@ -23,7 +25,7 @@ if (geo) {
 }
 
 async function getWeather(city) {
-  const apiKey = WEATHER_API_KEY;
+  const apiKey = process.env.WEATHER_API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=pl`;
   try {
     const response = await fetch(url);
@@ -88,9 +90,9 @@ async function getCityImage(city) {
     const bodyStyle = document.body.style;
     if (imageUrl.pathname === "/source-404") {
       if (window.innerWidth >= window.innerHeight) {
-        bodyStyle.backgroundImage = `url(./images/sunrise.jpg)`;
+        bodyStyle.backgroundImage = `url(${sunriseImg})`;
       } else {
-        bodyStyle.backgroundImage = `url(./images/clouds.jpg)`;
+        bodyStyle.backgroundImage = `url(${cloudsImg})`;
       }
     } else {
       bodyStyle.backgroundImage = `url("${bgImageURL}")`;
@@ -103,7 +105,7 @@ async function getCityImage(city) {
 }
 
 async function getCity(lat, lng) {
-  const apiKey = GEOLOCATION_API_KEY;
+  const apiKey = process.env.GEOLOCATION_API_KEY;
   const url = `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&lang=pl&apiKey=${apiKey}`;
   try {
     const response = await fetch(url);
