@@ -6,7 +6,9 @@
 }
 
 body {
-  background-color: #222;
+  background: #f09819;
+  background: -webkit-linear-gradient(to right, #edde5d, #f09819);
+  background: linear-gradient(to right, #edde5d, #f09819);
   background-image: url(./images/sunrise.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +24,6 @@ body {
 }
 
 main {
-  /* background-color: rgba(0, 0, 0, 0.81); */
   background-color: rgba(0, 0, 42, 0.826);
   backdrop-filter: blur(2px);
   border-radius: 30px;
